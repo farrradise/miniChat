@@ -1,12 +1,15 @@
 $(document).ready(function(){
 
   // Déclaration de mes phrases automatiques
-  var phraseBot = ["salut, moi c'est Elena, comment tu t'appelles ?", "Ravie de faire ta connaissace pseudo, comment t'as attéri sur le chat?", "génial"];
-  var phraseBot2 = ["hum, intéressant !", "Je vois... Et tu fais quoi dans la vie ? ", "M'en parle pas ! Tu as prévu quelque chose aujourd'hui", "Wahou"];
-  var phraseBotFinal = "désolé pseudo, je dois partir, on parle bientôt ! xx"
+  var phraseBot = ["salut, moi c'est Elena, comment tu t'appelles ?", "Ravie de faire ta connaissace pseudo, comment t'as attéri sur le chat?", "Je vois... Et tu fais quoi dans la vie ? ", "génial", "hum, intéressant !", "M'en parle pas ! Tu as prévu quelque chose aujourd'hui?", "Wahou, c'est top", "désolé pseudo, je dois partir, on parle bientôt ! xx"];
+  var indice = 0;
   var mySentence ="";
-  phraseBot[0] = "<p>"+ phraseBot[0] + "</p>";
-  $("#histo").append(phraseBot[0]);
+  var dernierP;
+
+
+  phraseBot[indice] = "<p>"+ phraseBot[indice] + "</p>";
+  $("#histo").append(phraseBot[indice]);
+  indice++;
 
   $("#envoi").click(function(){
 
@@ -17,6 +20,15 @@ $(document).ready(function(){
         $("#mySentence").val("");
         $("#histo").animate({
           scrollTop: $("#histo").get(0).scrollHeight}, 1000);
+      }
+      dernierP = $("#histo p:last-of-type").attr("class");
+
+      if (dernierP == "user") {
+        alert("bien joué");
+        phraseBot[indice] = "<p>"+ phraseBot[indice] + "</p>";
+        $("#histo").append(phraseBot[indice]);
+        indice++;
+
       }
   });
 
