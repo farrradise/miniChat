@@ -13,9 +13,8 @@ $(document).ready(function(){
   indice++;
 
   $("#envoi").click(function(){ laFonction();});
-  // $("input").keypress(e.which)
-  $('input').bind('keypress', function(e) {
-    if (e.which == 13) {
+  $('input').bind('keypress', function(key) {
+    if (key.which == 13) {
       laFonction();
     }
   });
@@ -40,19 +39,22 @@ $(document).ready(function(){
 
     if (dernierP == "user") {
 
-      if (indice!== phraseBot.length) {
-        phraseBot[indice] = "<p>"+ phraseBot[indice] + "</p>";
-        $("#histo").append(phraseBot[indice]);
-        indice++;
+      setTimeout(reponseBot,2000);
+      //  après il faudra ajouter un laps de temps
+      //  ensuite mettre une anim (temps image et bruit)
 
-      }
       // alert("bien joué");
 
     }
   }
 
-//  Ecrire que si last p contient la class "user", il faut ajouter une phrase du bot
-//  après il faudra ajouter un laps de temps
-//  ensuite mettre une anim (temps image et bruit)
+function reponseBot() {
+  if (indice!== phraseBot.length) {
+    phraseBot[indice] = "<p>"+ phraseBot[indice] + "</p>";
+    $("#histo").append(phraseBot[indice]);
+    indice++;
+
+  }
+}
 
 });
