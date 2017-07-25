@@ -8,8 +8,6 @@ $(document).ready(function(){
   phraseBot[0] = "<p>"+ phraseBot[0] + "</p>";
   $("#histo").append(phraseBot[0]);
 
-// mettre un bruit, un temps et une image à l'écriture d'élena
-
   $("#envoi").click(function(){
 
       if ($("#mySentence").val()!== "") {
@@ -21,5 +19,9 @@ $(document).ready(function(){
           scrollTop: $("#histo").get(0).scrollHeight}, 1000);
       }
   });
+
+//  Ecrire que si last p contient la class "user", il faut ajouter une phrase du bot
+//  après il faudra ajouter un laps de temps
+//  ensuite mettre une anim (temps image et bruit)
 
 });
