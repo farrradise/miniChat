@@ -47,12 +47,12 @@ $(document).ready(function(){
   }
 
 function reponseBot() {
+  $("#writting").css("display", "none");
+
   if (indice!== phraseBot.length) {
-    $("#writting").css("display", "none");
     phraseBot[indice] = "<p>"+ phraseBot[indice] + "</p>";
     $("#histo").append(phraseBot[indice]);
     indice++;
-
     $("#histo").animate({
       scrollTop: $("#histo").get(0).scrollHeight}, 1000);
   }
