@@ -7,7 +7,7 @@ $(document).ready(function(){
   var dernierP;
   var name="";
 
-
+  $("#writting").css("display", "none");
   phraseBot[indice] = "<p>"+ phraseBot[indice] + "</p>";
   $("#histo").append(phraseBot[indice]);
   indice++;
@@ -38,18 +38,15 @@ $(document).ready(function(){
     dernierP = $("#histo p:last-of-type").attr("class");
 
     if (dernierP == "user") {
-
-      setTimeout(reponseBot,2000);
-      //  après il faudra ajouter un laps de temps
-      //  ensuite mettre une anim (temps image et bruit)
-
-      // alert("bien joué");
-
+      setTimeout(function() {$("#writting").css("display", "block");}, 500);
+      // $("#writting").css("display", "block");
+      setTimeout(reponseBot,3000);
     }
   }
 
 function reponseBot() {
   if (indice!== phraseBot.length) {
+    $("#writting").css("display", "none");
     phraseBot[indice] = "<p>"+ phraseBot[indice] + "</p>";
     $("#histo").append(phraseBot[indice]);
     indice++;
