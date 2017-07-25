@@ -41,7 +41,9 @@ $(document).ready(function(){
       setTimeout(function() {$("#writting").css("display", "block");}, 500);
       // $("#writting").css("display", "block");
       setTimeout(reponseBot,3000);
+
     }
+
   }
 
 function reponseBot() {
@@ -51,6 +53,8 @@ function reponseBot() {
     $("#histo").append(phraseBot[indice]);
     indice++;
 
+    $("#histo").animate({
+      scrollTop: $("#histo").get(0).scrollHeight}, 1000);
   }
 }
 
