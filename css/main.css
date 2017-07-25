@@ -60,7 +60,16 @@ main {
       height: 70%;
       border: 2px solid #2DC5FF;
       background-color: white;
-      overflow-y: scroll; }
+      overflow-y: scroll;
+      color: white; }
+      main #conversation #histo p {
+        background-color: #2DC5FF;
+        min-height: 20px;
+        padding: 10px 5px;
+        width: 80%; }
+      main #conversation #histo .user {
+        margin-left: auto;
+        background-color: #65787F; }
   main #ecriture {
     margin: 10px auto;
     background-color: inherit;
